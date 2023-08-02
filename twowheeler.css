@@ -1,0 +1,31 @@
+:host {
+    height: 100vh;
+  }
+  
+  /* Set the maximum width of the page content */
+  .container {
+    border-radius: 30%;
+    width: 100%;
+    height: 90%;
+  }
+
+  .trial1{
+    width:50%;
+    margin-left: 20%;
+  }
+
+  .trial2{
+    width:50%;
+    margin-left: 20%;
+    font-size: large;
+    
+  }
+
+  .trial3{
+    margin-left:45%;
+    font-style: bold ;
+  }
+
+  .trial4{
+    margin-left: 95%;
+  }

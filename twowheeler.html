@@ -1,0 +1,70 @@
+<template>
+   
+    <lightning-card title="TWO WHEELER LOAN" class="trial3">
+        <lightning-icon size="xx-large"   class="trial4" icon-name="action:new_note" alternative-text="New note" title="New note"></lightning-icon>
+        
+    </lightning-card >
+    <div class="container">
+    <lightning-card title="ENTER DETAILS OF THE USER" class="trial2">
+
+		<lightning-input class="trial1" name="firstname" label="FIRST NAME" onchange={handleChange} required> </lightning-input>
+		<lightning-input class="trial1" name="lastname" label="LAST NAME" onchange={handleChange} > </lightning-input>
+        <lightning-input class="trial1" name="address" label="ADDRESS" onchange={handleChange} > </lightning-input>
+        <lightning-input class="trial1" name="mobnum" label="Mobile Number" onchange={handleChange} maxlength="10" pattern="[0-9]{10}" required> </lightning-input>
+        <lightning-input class="trial1" name="panno" label="PAN Number" onchange={handleChange} maxlength="10" required> </lightning-input>
+        <lightning-input class="trial1" name="bikemodel" label="Bike Model" onchange={handleChange}> </lightning-input>
+        <lightning-input class="trial1" name="bikeprice" label="Bike Price" onchange={handleChange} maxlength="15"> </lightning-input>
+        </lightning-card>
+    </div>
+
+    <lightning-card title="IS LOAN TAKEN OR NOT ?" class="trial1">
+        <lightning-combobox
+        class="trial1"
+        name="progress"
+        label="Is the loan taken or not ?"
+        value={value}
+        placeholder="Select Progress"
+        options={insuranceOptions}
+        onchange={handleChangebox} ></lightning-combobox>
+
+<h1 class="trail4" ><b>Selected value is: {value}</b></h1>
+
+<template if:true={visible} >
+    <lightning-card title="If loan is taken then enter the details" class="trial1">
+        <lightning-input class="trial1" name="loancompany" label="LOAN PROVIDING COMPANY" onchange={handleChange} required="true"> </lightning-input>
+        <lightning-input class="trial1" name="loanamount" label="LOAN AMOUNT" onchange={handleChange} required> </lightning-input>
+    </lightning-card>
+</template>
+
+    </lightning-card>
+
+<lightning-card title="PLEASE CHECK YOUR ENTERED DETAILS HERE" class="trial2"> 
+    <h1>
+        Entered first name : <b>{fullName.firstName}</b>
+        <br>
+        Entered last name : <b>{fullName.lastName}</b>
+        <br>
+        Entered Address : <b>{details.Address}</b>
+        <br>
+        Entered Mobile No. : <b>{details.mobNum}</b>
+        <br>
+        Entered PAN No. : <b>{details.panNo}</b>
+        <br>
+        Entered Bike Model : <b>{details.bikeModel}</b>
+        <br>
+        Entered Bike Price : <b>{details.bikePrice}</b>
+        <br>
+        Is the loan taken or no : <b>{value}</b>
+        <br>
+    </h1>
+    
+        <lightning-button 
+            variant="brand"
+            label="SAVE YOUR DETAILS"
+            name="button2"
+            onclick={handleShowDetails}
+        >
+        </lightning-button>
+
+</lightning-card>
+</template>
